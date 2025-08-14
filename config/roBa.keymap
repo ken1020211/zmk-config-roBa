@@ -12,17 +12,18 @@
     automouse-layer = <4>;
     scroll-layers = <5>;
 
-     arrows {
-         layers = <3>;
-         bindings =
-             <&kp RIGHT_ARROW>,
-             <&kp LEFT_ARROW>,
-             <&kp UP_ARROW>,
-             <&kp DOWN_ARROW>;
-         tick = <10>;
-         wait-ms = <5>;
-         tap-ms = <5>;
-     };
+    arrows {
+        layers = <3>;
+        bindings =
+            <&kp RIGHT_ARROW>,
+            <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
+
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+    };
 };
 
 / {
@@ -73,11 +74,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
         encoder_msc_down_up: encoder_msc_down_up {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
     };
@@ -93,7 +96,8 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 1 SPACE  &lt_to_layer_0 3 GRAVE           &kp BACKSPACE              &lt 2 ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PG_DN>;
+
             //sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
@@ -108,11 +112,10 @@
 
         NUM {
             bindings = <
-&kp N1           &kp N2     &kp N3             &kp N4      &kp N5                                                    &kp N6             &kp N7         &kp N8           &kp N9                &kp N0
-&kp EXCLAMATION  &kp AT     &kp HASH           &kp DOLLAR  &kp PERCENT  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp CARET          &kp AMPERSAND  &kp ASTERISK     &kp LEFT_PARENTHESIS  &kp SEMICOLON
-&kp UNDER        &kp COLON  &kp DOUBLE_QUOTES  &kp EQUAL   &kp LS(0x87)    &kp 0x89                    &kp LS(0x89)
-&kp RIGHT_BRACKET  &kp BACKSLASH  &kp RIGHT_BRACE  &kp PIPE              &kp BACKSLASH
-&trans           &trans     &trans             &trans      &kp TAB      &trans                       &trans          &trans                                                                   &kp PIPE
+&kp N1           &kp N2     &kp N3             &kp N4      &kp N5                                                     &kp N6             &kp N7         &kp N8           &kp N9                &kp N0
+&kp EXCLAMATION  &kp AT     &kp HASH           &kp DOLLAR  &kp PERCENT   &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp CARET          &kp AMPERSAND  &kp ASTERISK     &kp LEFT_PARENTHESIS  &kp SEMICOLON
+&kp UNDER        &kp COLON  &kp DOUBLE_QUOTES  &kp EQUAL   &kp LS(0x87)  &kp 0x89                     &kp LS(0x89)    &kp RIGHT_BRACKET  &kp BACKSLASH  &kp RIGHT_BRACE  &kp PIPE              &kp BACKSLASH
+&trans           &trans     &trans             &trans      &kp TAB       &trans                       &trans          &trans                                                                   &kp PIPE
             >;
         };
 
