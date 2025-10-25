@@ -5,6 +5,31 @@
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 80
 
+// OS設定を日本語キーボードのまま使用するための変換定義
+#define JP_DQUOTE       AT                // "
+#define JP_AMPERSAND    CARET             // &
+#define JP_QUOTE        AMPERSAND         // '
+#define JP_EQUAL        UNDER             // =
+#define JP_CARET        EQUAL             // ^
+#define JP_YEN          0x89              // ¥
+#define JP_PLUS         COLON             // +
+#define JP_TILDE        PLUS              // ~
+#define JP_PIPE         LS(0x89)          // |
+#define JP_AT           LEFT_BRACKET      // @
+#define JP_COLON        SINGLE_QUOTE      // :
+#define JP_ASTERISK     DOUBLE_QUOTES     // *
+#define JP_BACKQUOTE    LEFT_BRACE        // `
+#define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_LBRACKET     RIGHT_BRACKET     // [
+#define JP_RBRACKET     BACKSLASH         // ]
+#define JP_LPAREN       ASTERISK          // (
+#define JP_RPAREN       LEFT_PARENTHESIS  // )
+#define JP_LBRACE       RIGHT_BRACE       // {
+#define JP_RBRACE       PIPE              // }
+#define JP_KANA         LANGUAGE_1        // かな
+#define JP_EISU         LANGUAGE_2        // 英数
+#define JP_HANZEN       GRAVE             // 半角/全角
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -94,8 +119,8 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R                        &kp T                                                                    &kp Y        &kp U  &lt 5 I    &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                    &kp MINUS                  &kp H        &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &mt LEFT_SHIFT SINGLE_QUOTE      &mt RIGHT_SHIFT SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&lt_to_layer_0 6 0x89         &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL LEFT_BRACKET  &lt 1 SPACE  &lt_to_layer_0 3 GRAVE           &kp BACKSPACE              &lt 2 ENTER                             &kp DEL
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &mt LEFT_SHIFT JP_COLON      &mt RIGHT_SHIFT SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&lt_to_layer_0 6 JP_YEN         &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL LEFT_BRACKET  &lt 1 SPACE  &lt_to_layer_0 3 JP_HANZEN           &kp BACKSPACE              &lt 2 ENTER                             &kp DEL
             >;
 
             //sensor-bindings = <&inc_dec_kp PAGE_DOWN PG_UP>;
@@ -114,8 +139,8 @@
         NUM {
             bindings = <
 &kp N1           &kp N2     &kp N3             &kp N4      &kp N5                                                     &kp N6             &kp N7         &kp N8           &kp N9                &kp N0
-&kp EXCLAMATION  &kp AT     &kp HASH           &kp DOLLAR  &kp PERCENT   &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp CARET          &kp AMPERSAND  &kp ASTERISK     &kp LEFT_PARENTHESIS  &kp SEMICOLON
-&kp UNDER        &kp COLON  &kp DOUBLE_QUOTES  &kp EQUAL   &kp LS(0x87)  &kp 0x89                     &kp LS(0x89)    &kp RIGHT_BRACKET  &kp BACKSLASH  &kp RIGHT_BRACE  &kp PIPE              &kp BACKSLASH
+&kp EXCLAMATION  &kp JP_DQUOTE     &kp HASH           &kp DOLLAR  &kp PERCENT   &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp JP_AMPERSAND          &kp JP_QUOTE  &kp JP_LPAREN     &kp JP_RPAREN  &kp SEMICOLON
+&kp JP_EQUAL        &kp JP_PLUS  &kp JP_ASTERISK  &kp JP_CARET   &kp JP_UNDERSCORE  &kp JP_YEN                     &kp JP_PIPE    &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_LBRACE  &kp JP_RBRACE             &kp BACKSLASH
 &trans           &trans     &trans             &trans      &kp TAB       &trans                       &trans          &trans                                                                   &kp PLUS
             >;
         };
