@@ -39,6 +39,19 @@
     automouse-layer = <4>;
     scroll-layers = <5>;
 
+    function {
+        layers = <2>;
+        bindings =
+            <&kp LC(TAB)>,
+            <&kp LS(LC(TAB))>,
+            <&kp LA(ESCAPE)>,
+            <&kp LS(LA(ESCAPE))>;
+
+        tick = <50>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+    };
+
     arrows {
         layers = <3>;
         bindings =
@@ -119,8 +132,8 @@
             bindings = <
 &kp Q             &kp W         &kp E         &kp R                        &kp T                                                                    &kp Y        &kp U  &lt 5 I    &kp O    &kp P
 &kp A             &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                    &kp MINUS                  &kp H        &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &mt LEFT_SHIFT JP_COLON      &mt RIGHT_SHIFT SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&lt_to_layer_0 6 JP_YEN         &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL JP_AT  &lt 1 SPACE  &lt_to_layer_0 3 JP_HANZEN           &kp BACKSPACE              &lt 2 ENTER                             &kp DEL
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &lt_to_layer0 6 JP_COLON      &mt RIGHT_SHIFT SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&lt_to_layer_0 2 JP_YEN         &kp LEFT_WIN  &kp LEFT_ALT  &mt LCTRL JP_AT  &lt 1 SPACE  &lt_to_layer_0 3 JP_HANZEN           &kp BACKSPACE              &lt 2 ENTER                             &kp DEL
             >;
 
             //sensor-bindings = <&inc_dec_kp PAGE_DOWN PG_UP>;
@@ -130,7 +143,7 @@
         FUNCTION {
             bindings = <
 &kp F1   &kp F2          &kp F3          &kp F4           &kp F5                        &kp F6    &kp F7          &kp F8          &kp F9           &kp F10
-&kp F11  &kp F12         &kp UP_ARROW    &trans           &trans  &trans      &trans    &trans    &mkp MB1        &mkp MB3        &mkp MB2         &trans
+&kp F11  &kp F12         &kp UP_ARROW    &trans           &trans  &trans      &trans    &trans    &mkp MB1        &mkp MB3        &mkp MB2         &kp MINUS
 &trans   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans      &trans    &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
 &trans   &trans          &trans          &trans           &trans  &trans      &mkp MB4  &mkp MB5                                                   &trans
             >;
