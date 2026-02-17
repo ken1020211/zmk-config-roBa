@@ -125,7 +125,7 @@
         };
         td0: tap_dance_0{
             compatible = "zmk,behavior-tap-dance";
-            #bindin-cells = <0>;
+            #binding-cells = <0>;
             tapping-term-ms =<200>;
             bindings = <&kp JP_EISU>, <&kp JP_KANA>;
         };
