@@ -70,11 +70,11 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {
+        eisu {
             bindings = <&kp JP_EISU>;
             key-positions = <3 4>;
         };
-        tab {
+        kana {
             bindings = <&kp JP_KANA>;
             key-positions = <5 6>;
         };
